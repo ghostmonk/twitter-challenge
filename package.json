@@ -1,0 +1,27 @@
+{
+  "name": "twitter-console",
+  "version": "1.0.0",
+  "description": "A twitter console challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tp-npm-install": "npm install twitter-proxy/",
+    "start": "cd twitter-proxy & npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghostmonk/twitter-challenge.git"
+  },
+  "keywords": [
+    "appdirect",
+    "twitter",
+    "front-end"
+  ],
+  "author": "ghostmonk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ghostmonk/twitter-challenge/issues"
+  },
+  "homepage": "https://github.com/ghostmonk/twitter-challenge#readme",
+  "devDependencies": {}
+}

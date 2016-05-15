@@ -1,0 +1,3 @@
+[submodule "twitter-proxy"]
+	path = twitter-proxy
+	url = https://github.com/ghostmonk/twitter-proxy.git
