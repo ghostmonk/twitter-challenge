@@ -42,6 +42,12 @@ They should be self explanitory.
 Unfortunately you have to run the twitter proxy using a separate process.  
 The proxy should be started first... so that it is available to the console application.  
 In addition, the node modules should be installed separately from the main application.  
+
+### config.js
+
+Before running the commands below, please ensure you add the necessary values to the 
+twitter-proxy/config.js file. I did not commit these secrete values.
+
 Do the following commands in order
 
 ```cd twitter-proxy```  

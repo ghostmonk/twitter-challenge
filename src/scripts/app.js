@@ -16,4 +16,5 @@ var app = angular.module('twitterChallenge', ['ngSanitize', 'ngResource', 'ngCoo
     $routeProvider.otherwise({redirectTo: '/'});
     $locationProvider.html5Mode(true);
   }
+
 })();
