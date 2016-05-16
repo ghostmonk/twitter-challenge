@@ -16,13 +16,14 @@ Almost all javascript developers have used underscore, but unfortunately I had n
 I spent some time researching and playing with the framework for this project.   
 It was very enjoyable, and time well spent.
 
-## angular
+## Angular
 
 After doing a little research on backbone, I didn't find a lot, outside of underscore, for structuring an application.  
 Therefore I decided to pull in angular to allow some sensible organization of the files.  
 I considered creating something custom, but I enjoyed the opportunity of brushing up on Angular.  
+This, of course, will make the application a little bigger, but programming is a series of trade offs.  
 
-## gulp build
+## Gulp build
 
 The following command will list all available commands.  
 
@@ -70,3 +71,8 @@ To build application for dev.
 
 To build application for release.  
 ```gulp release-build```
+
+## Bower
+
+I use Bower for all of the client-side libraries. There is a postinstall target 
+defined in the package.json, so bower install should be run automatically on npm install.
