@@ -1,0 +1,68 @@
+@special_color: #24b45e;
+@selection_color:#52575c;
+@background_color:#FFFFFF;
+@main_font_color: #303028;
+@highlight_bg_color: #60ff8a;
+
+.mentions-input .highlighter-content strong {
+  background-color: @highlight_bg_color;
+}
+
+[data-mention] {
+  background-color: @highlight_bg_color;
+}
+
+textarea {
+  font-weight: 200;
+  font-size: x-large;
+}
+
+body {
+  background-color: @background_color;
+  color: @main_font_color;
+  font-family: 'Questrial', sans-serif;
+  font-size: x-large;
+}
+
+header {
+  text-align: center;
+  color: @special_color;
+}
+
+a {
+  color: @special_color;
+}
+
+.hoverwell:hover {
+  background-color: @selection_color;
+  cursor: pointer;
+}
+
+select, textarea {
+  color: @selection_color;
+}
+
+.well-title {
+  margin-top: 0px;
+}
+
+.session {
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+.votingWidget {
+  height: 64px;
+  padding: 7px;
+}
+
+.votingButton {
+  padding-left:6px;
+  cursor:pointer;
+}
+
+.special { color:@special_color !important; }
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none;
+}

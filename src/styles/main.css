@@ -1,0 +1,60 @@
+.mentions-input .highlighter-content strong {
+  background-color: #60ff8a;
+}
+[data-mention] {
+  background-color: #60ff8a;
+}
+textarea {
+  font-weight: 200;
+  font-size: x-large;
+}
+body {
+  background-color: #FFFFFF;
+  color: #303028;
+  font-family: 'Questrial', sans-serif;
+  font-size: x-large;
+}
+header {
+  text-align: center;
+  color: #24b45e;
+}
+a {
+  color: #24b45e;
+}
+.hoverwell:hover {
+  background-color: #52575c;
+  cursor: pointer;
+}
+select,
+textarea {
+  color: #52575c;
+}
+.well-title {
+  margin-top: 0px;
+}
+.session {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.votingWidget {
+  height: 64px;
+  padding: 7px;
+}
+.votingButton {
+  padding-left: 6px;
+  cursor: pointer;
+}
+.special {
+  color: #24b45e !important;
+}
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+  display: none;
+}
