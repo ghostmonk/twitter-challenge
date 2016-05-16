@@ -1,20 +1,18 @@
 'use strict';
-var app = angular.module('twitterChallenge', ['ngSanitize', 'ngResource', 'ngCookies', 'ngRoute']);
+var app = angular.module('app', ['ngSanitize', 'ngResource', 'ngCookies', 'ngRoute']);
 
-(function(){
-
+(function () {
   app.config(appConfig);
-  app.$inject = ['$routeProvider', '$locationProvider'];
+  appConfig.$inject = ['$routeProvider', '$locationProvider'];
 
   function appConfig($routeProvider, $locationProvider) {
 
     $routeProvider.when('/', {
-      templateUrl: 'templates/console.html',
-      controller: 'ConsoleController'
+      templateUrl: 'templates/twitter-deck.html',
+      controller: 'TwitterDeckController'
     });
 
     $routeProvider.otherwise({redirectTo: '/'});
     $locationProvider.html5Mode(true);
   }
-
 })();

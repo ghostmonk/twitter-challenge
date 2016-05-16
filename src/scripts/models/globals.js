@@ -5,13 +5,14 @@
  * a general configuration.
  */
 (function(){
-  app.constant('appConfig', {
+  app.constant('globals', {
     NUMBER_OF_TWEETS:30,
     PROXY_SERVER:"http://localhost:7890",
     SCREEN_NAMES:[
-      {name:"appdirect", id:154310289},
-      {name:"laughingsquid", id:2172},
-      {name:"techcrunch", id:816653}],
-    USER_TIMELINE:"1.1/statuses/user_timeline.json"
+      {name:"AppDirect", id:154310289},
+      {name:"LaughingSquid", id:2172},
+      {name:"TechCrunch", id:816653}],
+    USER_TIMELINE:"1.1/statuses/user_timeline.json",
+    DEBUG:true
   });
 })();
