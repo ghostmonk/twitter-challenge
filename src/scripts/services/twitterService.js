@@ -15,7 +15,7 @@
 
     function getProfileInfo(screenName) {
       return new Backbone.Model.extend({
-        url: globals.PROXY_SERVER + "/1.1/users/show.json?screen_name=" + screenName
+        url: globals.PROXY_SERVER + globals.USER_SHOW + "?screen_name=" + screenName
       });
     }
 
@@ -63,7 +63,7 @@
     }
 
     function getUserTimelineUrl(screenName, id, numberOfTweets) {
-      return globals.PROXY_SERVER + "/"
+      return globals.PROXY_SERVER
         + globals.USER_TIMELINE
         + "?count=" + numberOfTweets
         + "&user_id=" + id

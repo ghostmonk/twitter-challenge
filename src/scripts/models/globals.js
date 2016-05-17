@@ -7,12 +7,13 @@
 (function(){
   app.constant('globals', {
     NUMBER_OF_TWEETS:30,
-    PROXY_SERVER:"http://localhost:7890",
+    PROXY_SERVER:"https://gm-twitter-proxy.herokuapp.com/",
     SCREEN_NAMES:[
       {name:"AppDirect", id:154310289},
       {name:"LaughingSquid", id:2172},
       {name:"TechCrunch", id:816653}],
     USER_TIMELINE:"1.1/statuses/user_timeline.json",
+    USER_SHOW:"1.1/users/show.json",
     DEBUG:true
   });
 })();

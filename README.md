@@ -39,9 +39,7 @@ They should be self explanitory.
 
 ## Twitter Proxy Server
 
-Unfortunately you have to run the twitter proxy using a separate process.  
-The proxy should be started first... so that it is available to the console application.  
-In addition, the node modules should be installed separately from the main application.  
+The twitter proxy service is installed on Heroku at https://gm-twitter-proxy.herokuapp.com.
 
 ### config.js
 

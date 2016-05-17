@@ -17,6 +17,7 @@ var isDev = environment == 'dev';
 var root = isDev ? dev : release;
 var indexHtml = root + 'index.html';
 
+app.set('port', port);
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(compress());
