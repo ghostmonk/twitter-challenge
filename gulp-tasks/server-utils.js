@@ -57,8 +57,9 @@ module.exports = function (gulp, $, utils, config, args) {
 
     utils.log('Starting Browser Sync on  ' + port, 'blue');
 
-    var task = isDev ? ['dev-build'] : ['release-build'];
-    var watchFiles = [config.src + '**/*.*', '!' + config.src + '**/*.css']
+    //var task = isDev ? ['dev-build'] : ['release-build'];
+    var task = isDev ? ['release-build'] : ['release-build'];
+    var watchFiles = [config.src + '**/*.*', '!' + config.src + '**/*.css'];
 
     //TODO:The logic in all of this needs to be tested a lot more... I'm not sure this is practical.
     //This will invoke tasks when the watch files change

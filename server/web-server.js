@@ -9,7 +9,6 @@ var bodyParser = require('body-parser');
 var compress = require('compression');
 var cors = require('cors');
 var errorHandler = require('./errorHandler')();
-var favicon = require('serve-favicon');
 var logger = require('morgan');
 
 var port = process.env.PORT || 7201;
@@ -24,6 +23,7 @@ app.use(compress());
 app.use(logger('dev'));
 app.use(cors());
 app.use(errorHandler.init);
+app.use( errorHandler.logErrors );
 
 logMsgs([
   'Starting web-server',

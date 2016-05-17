@@ -5,6 +5,8 @@ module.exports = function (gulp, $, utils, config) {
 
   function build() {
     utils.log('STARTING DEV BUILD');
+    utils.log("Copying everything from " + config.src);
+    utils.log("And pasting it to " + config.dev);
     return gulp
       .src(config.src + '**/*.*')
       .pipe(gulp.dest(config.dev));

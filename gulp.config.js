@@ -54,7 +54,7 @@ module.exports = function () {
         defaultPort: defaultPort,
         nodeServer: server + 'web-server.js',
         server: server,
-        browserReloadDelay: 10000
+        browserReloadDelay: 1000
 
     };
 };
