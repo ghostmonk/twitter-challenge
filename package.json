@@ -1,6 +1,6 @@
 {
   "name": "twitter-console",
-  "version": "1.0.0-113",
+  "version": "1.0.0-114",
   "description": "A twitter console challenge",
   "main": "index.js",
   "repository": {
@@ -19,8 +19,11 @@
   },
   "homepage": "https://github.com/ghostmonk/twitter-challenge#readme",
   "devDependencies": {
+    "body-parser": "^1.15.1",
     "bower": "^1.4.1",
     "browser-sync": "^2.5.3",
+    "compression": "^1.6.2",
+    "cors": "^2.7.1",
     "del": "^1.1.1",
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "^2.1.0",
