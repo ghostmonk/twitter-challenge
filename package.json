@@ -51,7 +51,7 @@
   },
   "scripts": {
     "postinstall": "bower install",
-    "start": "node server/",
+    "start": "node server\/web-server.js",
     "build": "gulp release-build"
   },
   "engines": {
