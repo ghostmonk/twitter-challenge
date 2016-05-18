@@ -57,14 +57,11 @@
         id: id
       });
 
-      var tweets = new Tweets();
-
-      return tweets;
+      return new Tweets();
     }
 
     function getUserTimelineUrl(screenName, id, numberOfTweets) {
-      return globals.PROXY_SERVER
-        + globals.USER_TIMELINE
+      return globals.PROXY_SERVER + globals.USER_TIMELINE
         + "?count=" + numberOfTweets
         + "&user_id=" + id
         + "&screen_name=" + screenName;

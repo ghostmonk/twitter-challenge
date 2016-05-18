@@ -19,4 +19,4 @@ module.exports = function () {
     console.error(status + ' ' + message + stack);
     next(err);
   }
-}
+};

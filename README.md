@@ -1,6 +1,7 @@
 ## Twitter Challenge
 
 A front-end with standards compliant, asynchronous, API driven, beauteous JavaScript, HTML and CSS.
+The complete application can be found at https://appdirect-twitter-challenge.herokuapp.com.
 
 ##Node and npm
 
@@ -30,51 +31,33 @@ The following command will list all available commands.
 ```gulp help```  
 
 However, only the following commands will be of interest.
-They should be self explanitory.
 
+- To run application without minification.  
 ```gulp dev-run```  
-```gulp dev-build```
+
+
+- To build application for dev.  
+```gulp dev-build```  
+
+
+- To run application with minification.  
 ```gulp release-run```  
-```gulp release-build```
+
+
+- To build application for release.  
+```gulp release-build```  
+
 
 ## Twitter Proxy Server
 
 The twitter proxy service is installed on Heroku at https://gm-twitter-proxy.herokuapp.com.
 
-### config.js
-
-Before running the commands below, please ensure you add the necessary values to the 
-twitter-proxy/config.js file. I did not commit these secrete values.
-
-Do the following commands in order
-
-```cd twitter-proxy```  
-```npm install```  
-```npm start```  
-
 ## Launch the application
 
-Here are the steps for successfully running the application.
-From the root directory run the following commands.
-
-```npm install```  
-```cd twitter-proxy```  
 ```npm install```  
 ```npm start```  
 
 ... at this point will have to open another terminal and cd back to the root dir.
-
-To run application without minification.  
-```gulp dev-run```
-
-To run application with minification.  
-```gulp release-run```
-
-To build application for dev.  
-```gulp dev-build```
-
-To build application for release.  
-```gulp release-build```
 
 ## Bower
 
