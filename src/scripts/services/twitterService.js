@@ -7,12 +7,22 @@
   app.factory('twitterService', twitterService);
   twitterService.$inject = ['globals'];
 
+  /**
+   *
+   * @param globals
+   * @returns {{getTimeline: getTimeline, getProfileInfo: getProfileInfo}}
+   */
   function twitterService(globals) {
     return {
       getTimeline: getTimeline,
       getProfileInfo: getProfileInfo
     };
 
+    /**
+     *
+     * @param screenName
+     * @returns {Backbone.Model.extend}
+     */
     function getProfileInfo(screenName) {
       return new Backbone.Model.extend({
         url: globals.PROXY_SERVER + globals.USER_SHOW + "?screen_name=" + screenName
@@ -66,21 +76,21 @@
         + "&user_id=" + id
         + "&screen_name=" + screenName;
     }
-
-    function setHashTags(input) {
-      var pattern = /#(\w)*/g;
-      return input.replace(pattern, "<a href='http://www.twitter.com/$&' target='_blank'>$&</a>");
-    }
-
-    function setLinks(input) {
-      var pattern = /\b((?:[a-z][\w-]+:(?:\/{1,3}|[a-z0-9%])|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’]))/g;
-      return input.replace(pattern, "<a href='$&' target='_blank'>$&</a>");
-    }
-
-    function setReferences(input) {
-      var pattern = /\@(\w){1,15}/g;
-      return input.replace(pattern, "<a href='http://www.twitter.com/$&' target='_blank'>$&</a>");
-    }
   }
 
+  function setHashTags(input) {
+    var pattern = /#(\w)*/g;
+    return input.replace(pattern, "<a href='http://www.twitter.com/$&' target='_blank'>$&</a>");
+  }
+
+  function setLinks(input) {
+    //This is a big and ugly regex, I know... but it's effective
+    var pattern = /\b((?:[a-z][\w-]+:(?:\/{1,3}|[a-z0-9%])|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’]))/g;
+    return input.replace(pattern, "<a href='$&' target='_blank'>$&</a>");
+  }
+
+  function setReferences(input) {
+    var pattern = /\@(\w){1,15}/g;
+    return input.replace(pattern, "<a href='http://www.twitter.com/$&' target='_blank'>$&</a>");
+  }
 })();

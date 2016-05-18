@@ -3,6 +3,13 @@
   app.controller('TwitterDeckController', TwitterDeckController);
   TwitterDeckController.$inject = ['$scope', 'twitterService', 'globals'];
 
+  /**
+   *
+   * @param $scope
+   * @param twitterService
+   * @param globals
+   * @constructor
+   */
   function TwitterDeckController($scope, twitterService, globals) {
     var timeLines = [];
     _.each(globals.SCREEN_NAMES, function(screenName){

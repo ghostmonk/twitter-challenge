@@ -1,6 +1,6 @@
 {
   "name": "twitter-console",
-  "version": "1.0.0-125",
+  "version": "1.0.0-136",
   "description": "A twitter console challenge",
   "main": "index.js",
   "repository": {
@@ -22,8 +22,7 @@
   "scripts": {
     "postinstall": "bower install",
     "prestart": "gulp release-build",
-    "start": "node server/web-server.js",
-    "build": "gulp release-build"
+    "start": "node server/web-server.js"
   },
   "engines": {
     "node": "5.2.0",

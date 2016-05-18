@@ -1,4 +1,7 @@
 'use strict';
+/**
+ * This is just a helper class. Useful for placing miscellaneous methods.
+ */
 (function(){
   app.service('utils', utils);
   utils.$inject = ['globals'];

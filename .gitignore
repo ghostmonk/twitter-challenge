@@ -177,4 +177,5 @@ fabric.properties
 
 *bower_components
 build
+src/styles/*.css
 

@@ -1,137 +1,36 @@
-@special_color: #FFEE00;
-@selection_color:#52575c;
-@background_color: #2F3CA2;
-@main_font_color: #ffffff;
-@highlight_bg_color: #e51c23;
-@date_color: #01EBB6;
-@header_color: #FF5608;
-
-.mentions-input .highlighter-content strong {
-  background-color: @highlight_bg_color;
-}
-
-[data-mention] {
-  background-color: @highlight_bg_color;
-}
-
-textarea {
-  font-weight: 200;
-  font-size: large;
-}
+@import "variables";
+@import "tweet";
 
 body {
   background-color: @background_color;
   color: @main_font_color;
-  font-family: 'Questrial', sans-serif;
-  font-size: large;
+  font-family: @main_font;
+  font-size: @body_text;
   padding: 0px;
   margin: 0px;
-}
-
-a {
-  color: @special_color;
-}
-
-a:hover {
-  color:@highlight_bg_color;
-}
-
-a:active {
-  color:@highlight_bg_color;
-}
-
-
-.hoverwell:hover {
-  background-color: @selection_color;
-  cursor: pointer;
-}
-
-select, textarea {
-  color: @selection_color;
-}
-
-.well-title {
-  margin-top: 0px;
-}
-
-.session {
-  -webkit-touch-callout: none;
-  user-select: none;
-}
-
-.votingWidget {
-  height: 64px;
-  padding: 7px;
-}
-
-.votingButton {
-  padding-left:6px;
-  cursor:pointer;
-}
-
-.special { color:@special_color !important; }
-
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-  display: none;
 }
 
 header {
   text-align: center;
   width: 100%;
-  height: 100px;
+  height: @header_height;
   color: @special_color;
   top: 0px;
   position: fixed;
   box-shadow: 0px 1px 50px #333333;
   background-color: @header_color;
 }
-.tweet-handle {
-  text-align: center;
-  overflow: hidden;
-}
-.timeline {
-  width: 33%;
-  float: left;
-  display: inline;
-  padding-top: 100px;
-  overflow-y: scroll;
-}
-.tweet {
-  margin: 20px;
-  overflow: hidden;
-  border-bottom: 1px solid;
-  padding-bottom: 10px;
+
+a {
+  color: @special_color;
+  &:hover {
+    color:@highlight_color;
+  }
+  &:active {
+    color:@highlight_color;
+  }
 }
 
-.retweets {
-  font-size: small;
-  float: left;
-  padding: 10px;
-  float: right;
-  color: @header_color;
-}
-
-.date {
-  font-size: small;
-  float: right;
-  clear: both;
-  color: @date_color;
-  padding-bottom: 10px;
-}
-
-.favorites {
-  font-size: small;
-  float: right;
-  padding: 10px;
-  color: @header_color;
-}
-
-.tweet-text {
-  width: 100%;
-  clear: both;
-}
-
-.tweet-link {
-  float:right;
-  clear:both;
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none;
 }
