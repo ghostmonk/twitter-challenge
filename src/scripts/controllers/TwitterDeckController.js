@@ -4,7 +4,7 @@
   TwitterDeckController.$inject = ['$scope', 'twitterService', 'globals'];
 
   /**
-   *
+   * This controller is responsible for initializing all specified Twitter TimeLines.
    * @param $scope
    * @param twitterService
    * @param globals
@@ -33,6 +33,5 @@
       });
 
     });
-
   }
 })();
