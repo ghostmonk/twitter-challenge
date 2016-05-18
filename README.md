@@ -57,8 +57,6 @@ The twitter proxy service is installed on Heroku at https://gm-twitter-proxy.her
 ```npm install```  
 ```npm start```  
 
-... at this point will have to open another terminal and cd back to the root dir.
-
 ## Bower
 
 I use Bower for all of the client-side libraries. There is a postinstall target 
