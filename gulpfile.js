@@ -33,6 +33,7 @@ gulp.task('release-clean', release.clean);
 gulp.task('bump', release.bump);
 gulp.task('optimize', ['inject'], release.optimize);
 gulp.task('release-copy-files', release.copyFiles);
+gulp.task('release-fonts', release.copyFonts);
 
 gulp.task('release-assets', ['clean-assets'], release.copyAssets);
 gulp.task('clean-assets', release.cleanAssets);
@@ -48,7 +49,7 @@ function releaseBuild(onComplete) {
     'release-clean',
     'bump',
     'optimize',
-    ['release-copy-files', 'release-assets', 'release-templates'],
+    ['release-copy-files', 'release-assets', 'release-templates', 'release-fonts'],
     'minify-index',
     onComplete);
 }

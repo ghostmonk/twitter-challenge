@@ -1,18 +1,19 @@
 .tweet-handle {
   text-align: center;
   overflow: hidden;
+  background-color: darken(@background_color, 10%);
+  padding: 0;
+  padding: 0;
 }
 
 .timeline {
-  width: 33%;
+  width: 33.33333333%;
   float: left;
   display: inline;
-  padding-top: @header_height + 5;
-  @media (max-width: 600px) {
+  @media (max-width: 690px) {
     width: 100%;
     float: left;
     display: block;
-    padding-top: @header_height + 5;
   }
 }
 
@@ -23,9 +24,6 @@
   padding-bottom: @small_padding;
 }
 
-.retweets { .small_text(); }
-
-.favorites { .small_text(); }
 
 .date {
   font-size: @small_text_size;
@@ -42,5 +40,9 @@
 
 .tweet-link {
   float:right;
-  clear:both;
+  padding: @small_padding;
 }
+
+.retweets { .small_text(); }
+
+.favorites { .small_text(); }

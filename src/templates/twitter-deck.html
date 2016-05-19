@@ -1,10 +1,14 @@
 <div class="timeline" ng-repeat="timeLine in data.timeLines">
   <a href="https://twitter.com/{{timeLine.screenName}}" target="_blank"><div class="tweet-handle"><h3>@{{timeLine.screenName}}</h3></div></a>
-  <div class="tweet" ng-repeat="tweet in timeLine.models">
+  <div ngCloak class="tweet" ng-repeat="tweet in timeLine.models">
     <div class="date">{{tweet.getDate() | date:'medium'}}</div>
     <div class="tweet-text" ng-bind-html="tweet.getText()"></div>
-    <div class="retweets">retweets: {{tweet.getRetweetCount()}}</div>
-    <div class="favorites">favourties: {{tweet.getFavCount()}}</div>
+    <div class="retweets"><i class="fa fa-retweet" aria-hidden="true"></i> {{tweet.getRetweetCount()}}</div>
+    <div class="favorites"><i class="fa fa-heart" aria-hidden="true"></i> {{tweet.getFavCount()}}</div>
     <div class="tweet-link" ng-bind-html="tweet.getLink()"></div>
+  </div>
+  <div class="loading">
+    <i class="fa fa-cog fa-spin fa-3x fa-fw"></i>
+    <span class="sr-only">Loading...</span>
   </div>
 </div>

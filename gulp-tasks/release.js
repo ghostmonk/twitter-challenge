@@ -15,6 +15,10 @@ module.exports = function (gulp, $, utils, config, args) {
     copyToRelease('assets', config.assets);
   }
 
+  function copyFonts() {
+    copyToRelease('fonts', config.fonts);
+  }
+
   function cleanTemplates(onComplete) {
     cleanReleaseDir('templates', onComplete);
   }
@@ -136,7 +140,8 @@ module.exports = function (gulp, $, utils, config, args) {
     cleanTemplates: cleanTemplates,
     copyTemplates: copyTemplates,
     cleanAssets: cleanAssets,
-    copyAssets: copyAssets
+    copyAssets: copyAssets,
+    copyFonts: copyFonts
   }
 
 };

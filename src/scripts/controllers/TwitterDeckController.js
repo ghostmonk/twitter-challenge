@@ -13,7 +13,7 @@
   function TwitterDeckController($scope, twitterService, globals) {
     var timeLines = [];
     _.each(globals.SCREEN_NAMES, function(screenName){
-      var timeLine = twitterService.getTimeline(screenName.name, screenName.id, globals.NUMBER_OF_TWEETS);
+      var timeLine = twitterService.getTimeline(screenName.name, screenName.id, screenName.position, globals.NUMBER_OF_TWEETS);
       var profile = twitterService.getProfileInfo(screenName.name);
 
       timeLines.push(timeLine);

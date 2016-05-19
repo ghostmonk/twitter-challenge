@@ -1,60 +1,62 @@
 module.exports = function () {
-    'use strict';
-    
-    var root = './';
-    var buildFolder = root + 'build/';
-    var devFolder = buildFolder + 'dev/';
-    var releaseFolder = buildFolder + 'release/';
-    var src = root + 'src/';
-    var jsFolder = src + 'scripts/';
-    var cssFolder = src + 'styles/';
-    var server = root + 'server/';
-    var serverVersionFile = src + 'package.json';
-    var defaultPort = 5656;
+  'use strict';
 
-    var applicationJs = 'app.js';
-    var vendorJs = 'lib.js';
-    var htmlBlob = '**/*.html';
-    
-    return {
-        root: root,
-        src: src,
-        jsFolder: jsFolder,
-        cssFolder: cssFolder,
-        build: buildFolder,
-        dev: devFolder,
-        release: releaseFolder,
-        scripts: jsFolder + '**/*.js',
-        index: src + 'index.html',
-        packages: [root + 'package.json', root + 'bower.json'],
-        serverVersionFile: serverVersionFile,
-        releaseFiles: [serverVersionFile],
-        templates: src + 'templates/' + htmlBlob,
-        html: src + htmlBlob,
-        less: cssFolder + 'main.less',
-        css: cssFolder + 'main.css',
-        assets: src + 'assets/**/*.*',
+  var root = './';
+  var buildFolder = root + 'build/';
+  var devFolder = buildFolder + 'dev/';
+  var releaseFolder = buildFolder + 'release/';
+  var src = root + 'src/';
+  var jsFolder = src + 'scripts/';
+  var cssFolder = src + 'styles/';
+  var fontsFolder = src + 'fonts/';
+  var server = root + 'server/';
+  var serverVersionFile = src + 'package.json';
+  var defaultPort = 5656;
 
-        optimize: {
-            appJs: applicationJs,
-            vendorJs: vendorJs
-        },
+  var applicationJs = 'app.js';
+  var vendorJs = 'lib.js';
+  var htmlBlob = '**/*.html';
 
-        injectOptions: {
-            ignorePath:'src',
-            addRootSlash:false
-        },
+  return {
+    root: root,
+    src: src,
+    jsFolder: jsFolder,
+    cssFolder: cssFolder,
+    build: buildFolder,
+    dev: devFolder,
+    release: releaseFolder,
+    scripts: jsFolder + '**/*.js',
+    index: src + 'index.html',
+    packages: [root + 'package.json', root + 'bower.json'],
+    serverVersionFile: serverVersionFile,
+    releaseFiles: [serverVersionFile],
+    templates: src + 'templates/' + htmlBlob,
+    html: src + htmlBlob,
+    less: cssFolder + 'main.less',
+    css: cssFolder + 'main.css',
+    assets: src + 'assets/**/*.*',
+    fonts: fontsFolder + '**/*.*',
 
-        bowerOptions: {
-            bowerJs: require(root + 'bower.json'),
-            directory: src + 'bower_components/',
-            ignorePath: '../..'
-        },
+    optimize: {
+      appJs: applicationJs,
+      vendorJs: vendorJs
+    },
 
-        defaultPort: defaultPort,
-        nodeServer: server + 'web-server.js',
-        server: server,
-        browserReloadDelay: 1000
+    injectOptions: {
+      ignorePath: 'src',
+      addRootSlash: false
+    },
 
-    };
+    bowerOptions: {
+      bowerJs: require(root + 'bower.json'),
+      directory: src + 'bower_components/',
+      ignorePath: '../..'
+    },
+
+    defaultPort: defaultPort,
+    nodeServer: server + 'web-server.js',
+    server: server,
+    browserReloadDelay: 1000
+
+  };
 };

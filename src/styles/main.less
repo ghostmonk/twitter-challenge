@@ -1,6 +1,25 @@
 @import "variables";
 @import "tweet";
 
+.loading { text-align: center; }
+
+.edit {
+  float: right;
+  display: inline;
+  padding-right: 1em;
+  margin-top: -1.3em;
+  @media (max-width: 690px) {
+    font-size:1.8em;
+    margin-top: -1.5em;
+  }
+}
+
+h1 {
+  @media (max-width: 690px) {
+    font-size:1.8em;
+  }
+}
+
 body {
   background-color: @background_color;
   color: @main_font_color;
@@ -19,6 +38,17 @@ header {
   position: fixed;
   box-shadow: 0px 1px 50px #333333;
   background-color: @header_color;
+  z-index: 999999;
+  a{
+    text-decoration: none;
+    &:hover {
+      color:@background_color;
+    }
+  }
+}
+
+main {
+  padding-top: @header_height;
 }
 
 a {

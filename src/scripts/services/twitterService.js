@@ -30,10 +30,11 @@
      * @param numberOfTweets
      * @returns A Backbone Collection of Tweets
      */
-    function getTimeline(screenName, id, numberOfTweets) {
+    function getTimeline(screenName, id, position, numberOfTweets) {
       return new twitterModel.TimeLine({
         id:id,
         screenName:screenName,
+        position:position,
         url:getUserTimelineUrl(screenName, id, numberOfTweets)
       });
     }

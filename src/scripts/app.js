@@ -12,6 +12,11 @@ var app = angular.module('app', ['ngSanitize', 'ngResource', 'ngCookies', 'ngRou
       controller: 'TwitterDeckController'
     });
 
+    $routeProvider.when('/edit', {
+      templateUrl: 'templates/edit.html',
+      controller: 'EditController'
+    });
+
     $routeProvider.otherwise({redirectTo: '/'});
     $locationProvider.html5Mode(true);
   }

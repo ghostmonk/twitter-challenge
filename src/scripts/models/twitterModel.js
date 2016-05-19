@@ -37,7 +37,7 @@
         return this.attributes.text.substring(0, 2) == "RT";
       },
       getLink: function () {
-        return "<a href='https://twitter.com/" + this.attributes.id + "/statuses/" + this.attributes.id_str + "' target='_blank'>link</a><br />";
+        return "<a href='https://twitter.com/" + this.attributes.id + "/statuses/" + this.attributes.id_str + "' target='_blank'><i class='fa fa-external-link' aria-hidden='true'></i></a><br />";
       },
       getFavCount: function () {
         return this.attributes.favorite_count;
@@ -55,11 +55,13 @@
         this.url = attributes.url;
         this.screenName = attributes.screenName;
         this.id = attributes.id;
+        this.position = attributes.position;
       },
       model: Tweet,
       url:"",
       screenName:"",
-      id:""
+      id:"",
+      position:""
     });
 
     return {
