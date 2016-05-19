@@ -20,9 +20,9 @@
 
     function getUserTimelineUrl(screenName, id, numberOfTweets) {
       return globals.PROXY_SERVER + globals.USER_TIMELINE +
-        "?count=" + numberOfTweets +
-        "&user_id=" + id +
-        "&screen_name=" + screenName;
+        '?count=' + numberOfTweets +
+        '&user_id=' + id +
+        '&screen_name=' + screenName;
     }
 
     /**

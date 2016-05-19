@@ -10,8 +10,8 @@
       initialize: function(attributes){
         this.screenName = attributes.screenName;
       },
-      screenName:"",
-      url: globals.PROXY_SERVER + globals.USER_SHOW + "?screen_name=" + this.screenName
+      screenName:'',
+      url: globals.PROXY_SERVER + globals.USER_SHOW + '?screen_name=' + this.screenName
     });
 
     /**
@@ -25,17 +25,17 @@
       getText: function () {
         var tweetContent = this.attributes.text;
         if(!tweetContent) {
-          return "LOADING";
+          return 'LOADING';
         }
         var setLinks = utils.replaceLinks(tweetContent);
         var setHashTags = utils.replaceHashTags(setLinks);
         return utils.replaceReferences(setHashTags);
       },
       getIsRetweet: function () {
-        return this.attributes.text.substring(0, 2) === "RT";
+        return this.attributes.text.substring(0, 2) === 'RT';
       },
       getLink: function () {
-        return "<a href='https://twitter.com/" + this.attributes.id + "/statuses/" + this.attributes.id_str + "' target='_blank'><i class='fa fa-external-link' aria-hidden='true'></i></a><br />";
+        return '<a href="https://twitter.com/' + this.attributes.id + '/statuses/' + this.attributes.id_str + '" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i></a><br />';
       },
       getFavCount: function () {
         return this.attributes.favorite_count;
@@ -56,10 +56,10 @@
         this.position = attributes.position;
       },
       model: Tweet,
-      url:"",
-      screenName:"",
-      id:"",
-      position:""
+      url:'',
+      screenName:'',
+      id:'',
+      position:''
     });
 
     return {
