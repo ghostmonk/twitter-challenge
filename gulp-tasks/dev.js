@@ -52,5 +52,5 @@ module.exports = function (gulp, $, utils, config) {
     wireDeps: wireDeps,
     styles: styles,
     cleanStyles: cleanStyles
-  }
+  };
 };

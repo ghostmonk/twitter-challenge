@@ -1,7 +1,5 @@
-'use strict';
 (function(){
-  app.factory('twitterModel', twitterModel);
-  twitterModel.$inject = ['globals', 'utils'];
+  'use strict';
 
   function twitterModel(globals, utils) {
     /**
@@ -9,7 +7,7 @@
      * requested from the twitterApi.
      */
     var TwitterHandel = Backbone.Model.extend({
-      initialize: function(attributes, options){
+      initialize: function(attributes){
         this.screenName = attributes.screenName;
       },
       screenName:"",
@@ -34,7 +32,7 @@
         return utils.replaceReferences(setHashTags);
       },
       getIsRetweet: function () {
-        return this.attributes.text.substring(0, 2) == "RT";
+        return this.attributes.text.substring(0, 2) === "RT";
       },
       getLink: function () {
         return "<a href='https://twitter.com/" + this.attributes.id + "/statuses/" + this.attributes.id_str + "' target='_blank'><i class='fa fa-external-link' aria-hidden='true'></i></a><br />";
@@ -51,7 +49,7 @@
      * TimeLine is a Backbone Collection of Tweets
      */
     var TimeLine = Backbone.Collection.extend({
-      initialize:function(attributes, options){
+      initialize:function(attributes){
         this.url = attributes.url;
         this.screenName = attributes.screenName;
         this.id = attributes.id;
@@ -68,6 +66,9 @@
       TwitterHandel:TwitterHandel,
       TimeLine:TimeLine,
       Tweet:Tweet
-    }
+    };
   }
+
+  app.factory('twitterModel', twitterModel);
+  twitterModel.$inject = ['globals', 'utils'];
 })();

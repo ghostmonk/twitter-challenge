@@ -1,9 +1,5 @@
 module.exports = function () {
-  var service = {
-    init: init,
-    logErrors: logErrors
-  }
-  return service;
+  'use strict';
 
   function init(err, req, res, next) {
     var status = err.statusCode || 500;
@@ -19,4 +15,9 @@ module.exports = function () {
     console.error(status + ' ' + message + stack);
     next(err);
   }
+
+  return {
+    init: init,
+    logErrors: logErrors
+  };
 };

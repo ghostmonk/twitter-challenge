@@ -1,6 +1,5 @@
-'use strict';
-
 module.exports = function (gulp, $, utils, config, args) {
+  'use strict';
 
   function clean(onComplete) {
     utils.log('Cleaning Everything');
@@ -142,6 +141,6 @@ module.exports = function (gulp, $, utils, config, args) {
     cleanAssets: cleanAssets,
     copyAssets: copyAssets,
     copyFonts: copyFonts
-  }
+  };
 
 };

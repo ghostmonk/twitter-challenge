@@ -1,6 +1,5 @@
-'use strict';
-
 module.exports = function (gulp, $, utils, config, args) {
+  'use strict';
 
   var port = process.env.PORT || config.defaultPort;
   var browserSync = require('browser-sync');
@@ -14,7 +13,7 @@ module.exports = function (gulp, $, utils, config, args) {
   function runServerAsDev(isDev) {
     return function () {
       runServer(isDev);
-    }
+    };
   }
 
   function runServer(isDev) {

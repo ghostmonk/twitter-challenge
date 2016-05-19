@@ -1,11 +1,12 @@
-'use strict';
 (function () {
-  app.controller('LinkController', LinkController);
-  LinkController.$inject = ['$scope', '$location'];
+  'use strict';
 
   function LinkController($scope, $location) {
     $scope.navigate = function (path) {
       $location.url(path);
     };
   }
+
+  app.controller('LinkController', LinkController);
+  LinkController.$inject = ['$scope', '$location'];
 })();

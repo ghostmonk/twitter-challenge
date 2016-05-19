@@ -1,10 +1,10 @@
-'use strict';
 (function () {
-  app.controller('EditController', EditController);
-  EditController.$inject = ['$scope'];
+  'use strict';
 
   function EditController($scope) {
-    $scope.data = {message:"Hello World"};
+    $scope.data = {message:'Hello World'};
   }
 
+  app.controller('EditController', EditController);
+  EditController.$inject = ['$scope'];
 })();

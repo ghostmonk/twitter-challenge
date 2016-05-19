@@ -1,9 +1,7 @@
-'use strict';
 var app = angular.module('app', ['ngSanitize', 'ngResource', 'ngCookies', 'ngRoute']);
 
 (function () {
-  app.config(appConfig);
-  appConfig.$inject = ['$routeProvider', '$locationProvider'];
+  'use strict';
 
   function appConfig($routeProvider, $locationProvider) {
 
@@ -20,4 +18,7 @@ var app = angular.module('app', ['ngSanitize', 'ngResource', 'ngCookies', 'ngRou
     $routeProvider.otherwise({redirectTo: '/'});
     $locationProvider.html5Mode(true);
   }
+
+  app.config(appConfig);
+  appConfig.$inject = ['$routeProvider', '$locationProvider'];
 })();

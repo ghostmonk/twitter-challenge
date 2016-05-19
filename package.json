@@ -1,6 +1,6 @@
 {
   "name": "twitter-console",
-  "version": "1.0.0-218",
+  "version": "1.0.0-219",
   "description": "A twitter console challenge",
   "main": "index.js",
   "repository": {

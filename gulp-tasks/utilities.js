@@ -1,6 +1,5 @@
-'use strict';
-
 module.exports = function ($) {
+  'use strict';
 
   var del = require('del');
 
@@ -33,7 +32,6 @@ module.exports = function ($) {
     clean: clean,
     log: log,
     changeEventHandler: changeEventHandler
-  }
-
-}
+  };
+};
 

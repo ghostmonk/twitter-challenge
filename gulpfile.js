@@ -10,6 +10,19 @@ var server = require('./gulp-tasks/server-utils')(gulp, $, utils, config, args);
 var dev = require('./gulp-tasks/dev')(gulp, $, utils, config);
 var release = require('./gulp-tasks/release')(gulp, $, utils, config, args);
 
+function releaseBuild(onComplete) {
+  'use strict';
+
+  utils.log('STARTING RELEASE BUILD');
+  runSequence(
+    'release-clean',
+    'bump',
+    'optimize',
+    ['release-copy-files', 'release-assets', 'release-templates', 'release-fonts'],
+    'minify-index',
+    onComplete);
+}
+
 gulp.task('default', ['help']);
 gulp.task('help', $.taskListing);
 
@@ -42,14 +55,3 @@ gulp.task('release-templates', ['clean-templates'], release.copyTemplates);
 gulp.task('clean-templates', release.cleanTemplates);
 
 gulp.task('minify-index', release.minifyIndex);
-
-function releaseBuild(onComplete) {
-  utils.log('STARTING RELEASE BUILD');
-  runSequence(
-    'release-clean',
-    'bump',
-    'optimize',
-    ['release-copy-files', 'release-assets', 'release-templates', 'release-fonts'],
-    'minify-index',
-    onComplete);
-}

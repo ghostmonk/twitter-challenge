@@ -1,7 +1,5 @@
-'use strict';
 (function () {
-  app.controller('TwitterDeckController', TwitterDeckController);
-  TwitterDeckController.$inject = ['$scope', 'twitterService', 'globals'];
+  'use strict';
 
   /**
    * This controller is responsible for initializing all specified Twitter TimeLines.
@@ -34,4 +32,7 @@
 
     });
   }
+
+  app.controller('TwitterDeckController', TwitterDeckController);
+  TwitterDeckController.$inject = ['$scope', 'twitterService', 'globals'];
 })();

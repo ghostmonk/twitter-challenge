@@ -1,18 +1,13 @@
-'use strict';
 (function () {
-  app.factory('twitterService', twitterService);
-  twitterService.$inject = ['globals', 'twitterModel'];
+  'use strict';
 
   /**
    * The twitterService does the job of creating the model initiating the requests to the twitter proxy.
    * @param globals
+   * @param twitterModel
    * @returns {{getTimeline: getTimeline, getProfileInfo: getProfileInfo}}
    */
   function twitterService(globals, twitterModel) {
-    return {
-      getTimeline: getTimeline,
-      getProfileInfo: getProfileInfo
-    };
 
     /**
      * Retrieve the profile information for specified user
@@ -21,6 +16,13 @@
      */
     function getProfileInfo(screenName) {
       return new twitterModel.TwitterHandel({screenName:screenName});
+    }
+
+    function getUserTimelineUrl(screenName, id, numberOfTweets) {
+      return globals.PROXY_SERVER + globals.USER_TIMELINE +
+        "?count=" + numberOfTweets +
+        "&user_id=" + id +
+        "&screen_name=" + screenName;
     }
 
     /**
@@ -39,11 +41,12 @@
       });
     }
 
-    function getUserTimelineUrl(screenName, id, numberOfTweets) {
-      return globals.PROXY_SERVER + globals.USER_TIMELINE
-        + "?count=" + numberOfTweets
-        + "&user_id=" + id
-        + "&screen_name=" + screenName;
-    }
+    return {
+      getTimeline: getTimeline,
+      getProfileInfo: getProfileInfo
+    };
   }
+
+  app.factory('twitterService', twitterService);
+  twitterService.$inject = ['globals', 'twitterModel'];
 })();
