@@ -9,9 +9,10 @@
     var TwitterHandel = Backbone.Model.extend({
       initialize: function(attributes){
         this.screenName = attributes.screenName;
+        this.url = attributes.url;
       },
       screenName:'',
-      url: globals.PROXY_SERVER + globals.USER_SHOW + '?screen_name=' + this.screenName
+      url: ''
     });
 
     /**

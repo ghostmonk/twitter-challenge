@@ -3,7 +3,27 @@
   overflow: hidden;
   background-color: darken(@background_color, 10%);
   padding: 0;
-  padding: 0;
+  img {
+    border: 1px solid;
+    margin-top: 15px;
+  }
+  @media (min-width: @maxScreenWidth) {
+    position: fixed;
+    width: 33.33333333%;
+    z-index: 99999;
+    margin-top: -@handle_header_height;
+    height: @handle_header_height;
+    img {
+      float: left;
+      margin-left: 10px;
+    }
+    h3 {
+      float: left;
+      padding-top: 15px;
+      padding-left: 10px;
+      font-size: medium;
+    }
+  }
 }
 
 .timeline {

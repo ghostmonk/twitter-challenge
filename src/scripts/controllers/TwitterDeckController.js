@@ -15,22 +15,27 @@
     function setTimeLine(name) {
       var timeLine = twitterService.getTimeline(name, appData.numberOfTweets);
       var profile = twitterService.getProfileInfo(name);
+      timeLine.fetchedProfile = profile;
+      profile.fetch();
 
       timeLines.push(timeLine);
       var fetch = timeLine.fetch();
 
-      $scope.data = {};
-
       fetch.done(function( data, textStatus, jqXHR ) {
         $scope.$apply(function () {
-          $scope.data = {timeLines:timeLines, profile:profile};
+          console.log("SUCCESS:");
+          console.log(data);
         });
       });
 
       fetch.fail(function( data, textStatus, jqXHR ) {
         $scope.$apply(function () {
+          console.log("FAIL:");
+          console.log(data);
         });
       });
+
+      $scope.data = {timeLines:timeLines};
     }
 
     setTimeLine(appData.column1);

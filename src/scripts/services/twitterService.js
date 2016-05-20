@@ -15,7 +15,13 @@
      * @returns {Backbone.Model.extend}
      */
     function getProfileInfo(screenName) {
-      return new twitterModel.TwitterHandel({screenName:screenName});
+      console.log(screenName);
+      var url = globals.PROXY_SERVER + globals.USER_SHOW + '?screen_name=' + screenName;
+      console.log(url);
+      return new twitterModel.TwitterHandel({
+        screenName:screenName,
+        url:url
+      });
     }
 
     function getUserTimelineUrl(screenName, numberOfTweets) {

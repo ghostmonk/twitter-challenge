@@ -1,5 +1,10 @@
 <div class="timeline" ng-repeat="timeLine in data.timeLines">
-  <a href="https://twitter.com/{{timeLine.screenName}}" target="_blank"><div class="tweet-handle"><h3>@{{timeLine.screenName}}</h3></div></a>
+  <a href="https://twitter.com/{{timeLine.screenName}}" target="_blank">
+    <div class="tweet-handle">
+      <img src="{{timeLine.fetchedProfile.attributes.profile_image_url}}">
+      <h3>@{{timeLine.screenName}}</h3>
+    </div>
+  </a>
   <div ngCloak class="tweet" ng-repeat="tweet in timeLine.models">
     <div class="date">{{tweet.getDate() | date:'medium'}}</div>
     <div class="tweet-text" ng-bind-html="tweet.getText()"></div>
