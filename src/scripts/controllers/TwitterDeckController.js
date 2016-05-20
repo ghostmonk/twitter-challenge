@@ -11,6 +11,7 @@
   function TwitterDeckController($scope, twitterService, localSettings) {
     var appData = localSettings.getData();
     var timeLines = [];
+    var loaded = 0;
 
     function setTimeLine(name) {
       var timeLine = twitterService.getTimeline(name, appData.numberOfTweets);
@@ -25,6 +26,7 @@
         $scope.$apply(function () {
           console.log("SUCCESS:");
           console.log(data);
+          onComplete();
         });
       });
 
@@ -32,15 +34,21 @@
         $scope.$apply(function () {
           console.log("FAIL:");
           console.log(data);
+          onComplete();
         });
       });
-
-      $scope.data = {timeLines:timeLines};
     }
 
     setTimeLine(appData.column1);
     setTimeLine(appData.column2);
     setTimeLine(appData.column3);
+
+    function onComplete() {
+      loaded++;
+      if(loaded == 3) {
+        $scope.data = {timeLines:timeLines};
+      }
+    }
   }
 
   app.controller('TwitterDeckController', TwitterDeckController);

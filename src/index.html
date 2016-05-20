@@ -14,12 +14,7 @@
   <base href="/">
   <meta name="description" content="A project to test my mettle.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- build:css styles/lib.css -->
-  <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
-  <!-- endbower -->
-  <!-- endbuild -->
+  <script src="https://use.fontawesome.com/762b75c5cc.js"></script>
 
   <!-- build:css styles/app.css-->
   <!-- inject:css -->
@@ -42,7 +37,12 @@
     <a href="#/edit"><i class="fa fa-2x fa-cog edit" aria-hidden="true"></i></a>
   </header>
   <main>
-    <ng-view></ng-view>
+    <ng-view>
+      <div id="loading">
+        <i class="fa fa-cog fa-spin fa-3x fa-fw"></i>
+        <span class="sr-only">Loading...</span>
+      </div>
+    </ng-view>
   </main>
 </div>
 
@@ -63,13 +63,13 @@
 <!-- build:js scripts/app.js-->
 <!-- inject:js -->
 <script src="scripts/app.js"></script>
-<script src="scripts/services/twitterService.js"></script>
-<script src="scripts/services/utils.js"></script>
 <script src="scripts/controllers/EditController.js"></script>
 <script src="scripts/controllers/TwitterDeckController.js"></script>
 <script src="scripts/models/globals.js"></script>
 <script src="scripts/models/localSettings.js"></script>
 <script src="scripts/models/twitterModel.js"></script>
+<script src="scripts/services/twitterService.js"></script>
+<script src="scripts/services/utils.js"></script>
 <!-- endinject -->
 
 <!-- endbuild -->
