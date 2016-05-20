@@ -1,6 +1,7 @@
 var build = './build/';
 var dev = build + 'dev/';
 var release = build + 'release/';
+var src = './src/'
 
 var express = require('express');
 var app = express();
@@ -13,7 +14,8 @@ var logger = require('morgan');
 var port = process.env.PORT || 7201;
 var environment = process.env.NODE_ENV;
 var isDev = environment === 'dev';
-var root = isDev ? dev : release;
+var isSrc = environment === 'src';
+var root = isDev ? dev : isSrc ? src : release;
 var indexHtml = root + 'index.html';
 
 app.set('port', port);

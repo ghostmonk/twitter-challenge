@@ -16,7 +16,7 @@ var app = angular.module('app', ['ngSanitize', 'ngResource', 'ngCookies', 'ngRou
     });
 
     $routeProvider.otherwise({redirectTo: '/'});
-    $locationProvider.html5Mode(true);
+    //$locationProvider.html5Mode(true);
   }
 
   app.config(appConfig);

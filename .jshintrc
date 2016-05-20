@@ -3,7 +3,8 @@
     "Backbone": false,
     "app": true,
     "angular": false,
-    "_": false
+    "_": false,
+    "process": false
   },
   "curly": true,
   "eqeqeq": true,

@@ -5,25 +5,25 @@ module.exports = function (gulp, $, utils, config, args) {
   var browserSync = require('browser-sync');
 
   return {
-    runDev: runServerAsDev(true),
-    runRelease: runServerAsDev(false),
-    run: runServer
+    runDev: runServerAs('dev'),
+    runRelease: runServerAs('release'),
+    run: runServer,
+    runSrc: runServerAs('src')
   };
 
-  function runServerAsDev(isDev) {
+  function runServerAs(environment) {
     return function () {
-      runServer(isDev);
+      runServer(environment);
     };
   }
 
-  function runServer(isDev) {
-
+  function runServer(environment) {
     var nodeOptions = {
       script: config.nodeServer,
       delayTime: 1,
       env: {
         'PORT': port,
-        'NODE_ENV': isDev ? 'dev' : 'release'
+        'NODE_ENV': environment
       },
       watch: [config.server]
     };

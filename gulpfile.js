@@ -15,7 +15,7 @@ function releaseBuild(onComplete) {
 
   utils.log('STARTING RELEASE BUILD');
   runSequence(
-    'release-clean',
+    'clean-release',
     'bump',
     'optimize',
     ['release-copy-files', 'release-assets', 'release-templates', 'release-fonts'],
@@ -29,9 +29,10 @@ gulp.task('help', $.taskListing);
 /****************|
  * DEV
  ****************/
-gulp.task('dev-run', ['dev-build'], server.runDev);
-gulp.task('dev-build', ['dev-clean', 'inject'], dev.build);
-gulp.task('dev-clean', dev.clean);
+gulp.task('run-src', server.runSrc);
+gulp.task('run-dev', ['build-dev'], server.runDev);
+gulp.task('build-dev', ['clean-dev', 'inject'], dev.build);
+gulp.task('clean-dev', dev.clean);
 gulp.task('inject', ['wire-deps', 'styles'], dev.inject);
 gulp.task('wire-deps', dev.wireDeps);
 gulp.task('styles', ['clean-styles'], dev.styles);
@@ -40,9 +41,9 @@ gulp.task('clean-styles', dev.cleanStyles);
 /****************|
  * RELEASE
  ****************/
-gulp.task('release-run', ['release-build'], server.runRelease);
-gulp.task('release-build', releaseBuild);
-gulp.task('release-clean', release.clean);
+gulp.task('run-release', ['build-release'], server.runRelease);
+gulp.task('build-release', releaseBuild);
+gulp.task('clean-release', release.clean);
 gulp.task('bump', release.bump);
 gulp.task('optimize', ['inject'], release.optimize);
 gulp.task('release-copy-files', release.copyFiles);
