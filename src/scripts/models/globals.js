@@ -9,10 +9,10 @@
   app.constant('globals', {
     NUMBER_OF_TWEETS:30,
     PROXY_SERVER:'https://gm-twitter-proxy.herokuapp.com/',
-    SCREEN_NAMES:[
-      {name:'AppDirect', id:154310289, position:0},
-      {name:'LaughingSquid', id:2172, position:1},
-      {name:'TechCrunch', id:816653, position:2}],
+    COLUMN_1: 'AppDirect',
+    COLUMN_2: 'LaughingSquid',
+    COLUMN_3: 'TechCrunch',
+    STYLE:'hipster',
     USER_TIMELINE:'1.1/statuses/user_timeline.json',
     USER_SHOW:'1.1/users/show.json',
     DEBUG:true

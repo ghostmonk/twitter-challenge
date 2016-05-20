@@ -53,13 +53,11 @@
         this.url = attributes.url;
         this.screenName = attributes.screenName;
         this.id = attributes.id;
-        this.position = attributes.position;
       },
       model: Tweet,
       url:'',
       screenName:'',
-      id:'',
-      position:''
+      id:''
     });
 
     return {

@@ -5,14 +5,16 @@
    * This controller is responsible for initializing all specified Twitter TimeLines.
    * @param $scope
    * @param twitterService
-   * @param globals
+   * @param localSettings
    * @constructor
    */
-  function TwitterDeckController($scope, twitterService, globals) {
+  function TwitterDeckController($scope, twitterService, localSettings) {
+    var appData = localSettings.getData();
     var timeLines = [];
-    _.each(globals.SCREEN_NAMES, function(screenName){
-      var timeLine = twitterService.getTimeline(screenName.name, screenName.id, screenName.position, globals.NUMBER_OF_TWEETS);
-      var profile = twitterService.getProfileInfo(screenName.name);
+
+    function setTimeLine(name) {
+      var timeLine = twitterService.getTimeline(name, appData.numberOfTweets);
+      var profile = twitterService.getProfileInfo(name);
 
       timeLines.push(timeLine);
       var fetch = timeLine.fetch();
@@ -29,10 +31,13 @@
         $scope.$apply(function () {
         });
       });
+    }
 
-    });
+    setTimeLine(appData.column1);
+    setTimeLine(appData.column2);
+    setTimeLine(appData.column3);
   }
 
   app.controller('TwitterDeckController', TwitterDeckController);
-  TwitterDeckController.$inject = ['$scope', 'twitterService', 'globals'];
+  TwitterDeckController.$inject = ['$scope', 'twitterService', 'localSettings'];
 })();

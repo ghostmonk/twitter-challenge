@@ -7,15 +7,14 @@
   float: right;
   display: inline;
   padding-right: 1em;
-  margin-top: -1.3em;
-  @media (max-width: 690px) {
+  margin-top: -1.65em;
+  @media (max-width: @maxScreenWidth) {
     font-size:1.8em;
-    margin-top: -1.5em;
   }
 }
 
 h1 {
-  @media (max-width: 690px) {
+  @media (max-width: @maxScreenWidth) {
     font-size:1.8em;
   }
 }
@@ -39,16 +38,22 @@ header {
   box-shadow: 0px 1px 50px #333333;
   background-color: @header_color;
   z-index: 999999;
+  @media (max-width: @maxScreenWidth) {
+    height:@header_height_small;
+  };
   a{
     text-decoration: none;
     &:hover {
       color:@background_color;
     }
-  }
+  };
 }
 
 main {
   padding-top: @header_height;
+  @media (max-width: @maxScreenWidth) {
+    padding-top:@header_height_small;
+  };
 }
 
 a {

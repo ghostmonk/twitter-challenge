@@ -18,10 +18,10 @@
       return new twitterModel.TwitterHandel({screenName:screenName});
     }
 
-    function getUserTimelineUrl(screenName, id, numberOfTweets) {
+    function getUserTimelineUrl(screenName, numberOfTweets) {
       return globals.PROXY_SERVER + globals.USER_TIMELINE +
         '?count=' + numberOfTweets +
-        '&user_id=' + id +
+        //'&user_id=' + id +
         '&screen_name=' + screenName;
     }
 
@@ -32,12 +32,11 @@
      * @param numberOfTweets
      * @returns A Backbone Collection of Tweets
      */
-    function getTimeline(screenName, id, position, numberOfTweets) {
+    function getTimeline(screenName, position, numberOfTweets) {
       return new twitterModel.TimeLine({
-        id:id,
         screenName:screenName,
         position:position,
-        url:getUserTimelineUrl(screenName, id, numberOfTweets)
+        url:getUserTimelineUrl(screenName, numberOfTweets)
       });
     }
 
