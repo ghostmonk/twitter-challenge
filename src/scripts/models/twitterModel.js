@@ -43,6 +43,18 @@
       },
       getRetweetCount: function () {
         return this.attributes.retweet_count;
+      },
+      hasMedia: function() {
+        var entities = this.attributes.extended_entities;
+        if(entities === undefined) { return false; }
+        var media = entities.media;
+        return globals.SHOW_MEDIA && media.length > 0 && media[0].type === 'photo';
+      },
+      mediaUrl: function() {
+        return this.attributes.extended_entities.media[0].media_url_https + ':small';
+      },
+      mediaLink: function() {
+        return this.attributes.extended_entities.media[0].expanded_url;
       }
     });
 

@@ -9,6 +9,9 @@
     <div class="tweet" ng-repeat="tweet in timeLine.models">
       <div class="date">{{tweet.getDate() | date:'medium'}}</div>
       <div class="tweet-text" ng-bind-html="tweet.getText()"></div>
+      <div class="tweetPhoto" ng-if="tweet.hasMedia()">
+        <a href="{{tweet.mediaLink()}}" target="_blank"><img src="{{tweet.mediaUrl()}}" /></a>
+      </div>
       <div class="retweets"><i class="fa fa-retweet" aria-hidden="true"></i> {{tweet.getRetweetCount()}}</div>
       <div class="favorites"><i class="fa fa-heart" aria-hidden="true"></i> {{tweet.getFavCount()}}</div>
       <div class="tweet-link" ng-bind-html="tweet.getLink()"></div>

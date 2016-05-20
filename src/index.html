@@ -16,6 +16,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://use.fontawesome.com/762b75c5cc.js"></script>
 
+  <!-- build:css styles/lib.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+
   <!-- build:css styles/app.css-->
   <!-- inject:css -->
   <link rel="stylesheet" href="styles/main.css">
@@ -33,11 +38,17 @@
 <div class="container">
 
   <header>
-    <h1><a href="#/">#Twitter Deck <i class="fa fa-twitter" aria-hidden="true"></i></a></h1>
+    <h1>
+      <a href="#/">
+        <i class="fa fa-hashtag" aria-hidden="true"></i>
+        Twitter Deck
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+      </a>
+    </h1>
     <a href="#/edit"><i class="fa fa-2x fa-cog edit" aria-hidden="true"></i></a>
   </header>
   <main>
-    <ng-view>
+    <ng-view class="fade">
       <div id="loading">
         <i class="fa fa-cog fa-spin fa-3x fa-fw"></i>
         <span class="sr-only">Loading...</span>
@@ -49,12 +60,13 @@
 <!-- build:js scripts/lib.js -->
 <!-- bower:js -->
 <script src="bower_components/jquery/dist/jquery.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="bower_components/angular-cookies/angular-cookies.js"></script>
 <script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script src="bower_components/underscore/underscore.js"></script>
 <script src="bower_components/backbone/backbone.js"></script>
 <!-- endbower -->
@@ -65,11 +77,11 @@
 <script src="scripts/app.js"></script>
 <script src="scripts/controllers/EditController.js"></script>
 <script src="scripts/controllers/TwitterDeckController.js"></script>
+<script src="scripts/services/twitterService.js"></script>
+<script src="scripts/services/utils.js"></script>
 <script src="scripts/models/globals.js"></script>
 <script src="scripts/models/localSettings.js"></script>
 <script src="scripts/models/twitterModel.js"></script>
-<script src="scripts/services/twitterService.js"></script>
-<script src="scripts/services/utils.js"></script>
 <!-- endinject -->
 
 <!-- endbuild -->

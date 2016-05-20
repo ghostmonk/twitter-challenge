@@ -24,7 +24,6 @@
 
       fetch.done(function( data, textStatus, jqXHR ) {
         $scope.$apply(function () {
-          console.log("SUCCESS:");
           console.log(data);
           onComplete();
         });
@@ -32,8 +31,6 @@
 
       fetch.fail(function( data, textStatus, jqXHR ) {
         $scope.$apply(function () {
-          console.log("FAIL:");
-          console.log(data);
           onComplete();
         });
       });

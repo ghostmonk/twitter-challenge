@@ -27,7 +27,6 @@
     function getUserTimelineUrl(screenName, numberOfTweets) {
       return globals.PROXY_SERVER + globals.USER_TIMELINE +
         '?count=' + numberOfTweets +
-        //'&user_id=' + id +
         '&screen_name=' + screenName;
     }
 
@@ -38,10 +37,9 @@
      * @param numberOfTweets
      * @returns A Backbone Collection of Tweets
      */
-    function getTimeline(screenName, position, numberOfTweets) {
+    function getTimeline(screenName, numberOfTweets) {
       return new twitterModel.TimeLine({
         screenName:screenName,
-        position:position,
         url:getUserTimelineUrl(screenName, numberOfTweets)
       });
     }
