@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  function EditController($scope, localSettings, globals) {
+  function EditController($scope, localSettings, globals, utils) {
 
     var editView = Backbone.View.extend({
       events: {
@@ -12,31 +12,42 @@
         "input #numberOfTweets": "tweetsChanging",
         "change #styles": "styleChange",
         "change #showMedia": "showMediaChange",
+        "change #logOutput": "logOutputChange",
         "click #reset": "reset"
       },
-      column1Change : function() {
-
+      column1Change : function(event) {
+        utils.log(event);
         localSettings.setColumn1(this.$('#column1').val());
       },
-      column2Change : function() {
+      column2Change : function(event) {
+        utils.log(event);
         localSettings.setColumn2(this.$('#column2').val());
       },
-      column3Change : function() {
+      column3Change : function(event) {
+        utils.log(event);
         localSettings.setColumn3(this.$('#column3').val());
       },
-      tweetsChange : function() {
+      tweetsChange : function(event) {
+        utils.log(event);
         localSettings.setNumberOfTweets(this.$('#numberOfTweets').val());
       },
-      styleChange : function() {
+      styleChange : function(event) {
+        utils.log(event);
         localSettings.setStyle(this.$('#styles').val());
       },
-      showMediaChange : function() {
+      showMediaChange : function(event) {
+        utils.log(event);
         localSettings.setShowMedia(this.$('#showMedia').is(":checked"));
       },
-      tweetsChanging : function() {
+      logOutputChange : function() {
+        localSettings.setLogOutput(this.$('#logOutput').is(":checked"));
+      },
+      tweetsChanging : function(event) {
+        utils.log(event);
         setSlider($('#numberOfTweets').val());
       },
-      reset : function() {
+      reset : function(event) {
+        utils.log(event);
         localSettings.setColumn1(globals.COLUMN_1);
         this.$('#column1').val(globals.COLUMN_1);
 
@@ -73,5 +84,5 @@
   }
 
   app.controller('EditController', EditController);
-  EditController.$inject = ['$scope', 'localSettings', 'globals'];
+  EditController.$inject = ['$scope', 'localSettings', 'globals', 'utils'];
 })();

@@ -23,6 +23,7 @@
       validate(output, 'column3', globals.COLUMN_3);
       validate(output, 'style', globals.STYLE);
       validate(output, 'showMedia', globals.SHOW_MEDIA);
+      validate(output, 'logOutput', globals.DEBUG);
       return output;
     }
 
@@ -33,6 +34,7 @@
       setColumn3:curry('column3'),
       setStyle:curry('style'),
       setShowMedia:curry('showMedia'),
+      setLogOutput:curry('logOutput'),
       getData:getData
     };
   }

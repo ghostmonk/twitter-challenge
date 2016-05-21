@@ -15,7 +15,7 @@
     STYLE:'hipster',
     USER_TIMELINE:'1.1/statuses/user_timeline.json',
     USER_SHOW:'1.1/users/show.json',
-    DEBUG:true,
+    DEBUG:false,
     SHOW_MEDIA:true
   });
 })();

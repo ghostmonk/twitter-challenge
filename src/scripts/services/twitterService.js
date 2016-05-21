@@ -7,7 +7,7 @@
    * @param twitterModel
    * @returns {{getTimeline: getTimeline, getProfileInfo: getProfileInfo}}
    */
-  function twitterService(globals, twitterModel) {
+  function twitterService(globals, twitterModel, utils) {
 
     /**
      * Retrieve the profile information for specified user
@@ -15,9 +15,9 @@
      * @returns {Backbone.Model.extend}
      */
     function getProfileInfo(screenName) {
-      console.log(screenName);
+      utils.log(screenName);
       var url = globals.PROXY_SERVER + globals.USER_SHOW + '?screen_name=' + screenName;
-      console.log(url);
+      utils.log(url);
       return new twitterModel.TwitterHandel({
         screenName:screenName,
         url:url
@@ -51,5 +51,5 @@
   }
 
   app.factory('twitterService', twitterService);
-  twitterService.$inject = ['globals', 'twitterModel'];
+  twitterService.$inject = ['globals', 'twitterModel', 'utils'];
 })();

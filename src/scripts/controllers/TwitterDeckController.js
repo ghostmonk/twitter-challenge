@@ -8,7 +8,7 @@
    * @param localSettings
    * @constructor
    */
-  function TwitterDeckController($scope, twitterService, localSettings) {
+  function TwitterDeckController($scope, twitterService, localSettings, utils) {
     var appData = localSettings.getData();
     var timeLines = [];
     var loaded = 0;
@@ -24,13 +24,14 @@
 
       fetch.done(function( data, textStatus, jqXHR ) {
         $scope.$apply(function () {
-          console.log(data);
+          utils.log(data);
           onComplete();
         });
       });
 
       fetch.fail(function( data, textStatus, jqXHR ) {
         $scope.$apply(function () {
+          utils.log(data);
           onComplete();
         });
       });
@@ -49,5 +50,5 @@
   }
 
   app.controller('TwitterDeckController', TwitterDeckController);
-  TwitterDeckController.$inject = ['$scope', 'twitterService', 'localSettings'];
+  TwitterDeckController.$inject = ['$scope', 'twitterService', 'localSettings', 'utils'];
 })();

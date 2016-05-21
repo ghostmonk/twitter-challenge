@@ -4,7 +4,7 @@
 (function(){
   'use strict';
 
-  function utils(globals){
+  function utils(localSettings){
     return {
 
       dump: function (obj) {
@@ -12,7 +12,7 @@
       },
 
       log:function(obj) {
-        if(globals.DEBUG) {
+        if(localSettings.getData().logOutput) {
           console.log(obj);
         }
       },
@@ -35,5 +35,5 @@
   }
 
   app.service('utils', utils);
-  utils.$inject = ['globals'];
+  utils.$inject = ['localSettings'];
 })();
