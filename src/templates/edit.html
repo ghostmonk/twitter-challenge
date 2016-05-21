@@ -1,25 +1,47 @@
-<style>
-</style>
-
 <div id="editor">
-  <div class="column-input">
-    <h3>Column 1</h3>
-    <input type="text" name="column1" placeholder="{{data.column1}}">
+  <h1>Tweet Deck Editor</h1>
+  <div class="editSection">
+    <div class="column-input">
+      <h3>Column 1</h3>
+      <input type="text" name="column1" id="column1" placeholder="{{data.column1}}">
+    </div>
+
+    <div class="column-input">
+      <h3>Column 2</h3>
+      <input type="text" name="column2" id="column2" placeholder="{{data.column2}}">
+    </div>
+
+    <div class="column-input">
+      <h3>Column 3</h3>
+      <input type="text" name="column3" id="column3" placeholder="{{data.column3}}">
+    </div>
   </div>
 
-  <div class="column-input">
-    <h3>Column 2</h3>
-    <input type="text" name="column2" placeholder="{{data.column2}}">
+  <div class="editSection">
+    <div class="column-input">
+      <h3>Number of Tweets</h3>
+      <input type="range" min="1" max="30" value="{{data.numberOfTweets}}" name="numberOfTweets" id="numberOfTweets">
+      <div id="outputNumberOfTweets"></div>
+    </div>
+
+    <div class="column-input">
+      <h3>Style Sheet</h3>
+      <select name="styles" id="styles">
+        <option value="{{data.style}}" selected>{{data.style}}</option>
+        <option value="hipster">Hipster</option>
+        <option value="office">Office</option>
+      </select>
+    </div>
+
+    <div class="column-input">
+      <h3>Show Feed Images</h3>
+      <input type="checkbox" name="showMedia" value="showMedia" id="showMedia" ng-checked="data.showMedia" >
+    </div>
   </div>
 
-  <div class="column-input">
-    <h3>Column 3</h3>
-    <input type="text" name="column3" placeholder="{{data.column3}}">
+  <div class="editSection">
+    <div class="column-input">
+      <input type="submit" value="Reset" id="reset">
+    </div>
   </div>
-
-  <p>{{data.numberOfTweets}}</p>
-
-  <p>{{data.style}}</p>
-
-  <input type="submit" value="Submit">
 </div>

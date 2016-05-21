@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  function twitterModel(globals, utils) {
+  function twitterModel(localSettings, utils) {
     /**
      * TwitterHandel is a Backbone Model that reflects the User entity
      * requested from the twitterApi.
@@ -48,7 +48,7 @@
         var entities = this.attributes.extended_entities;
         if(entities === undefined) { return false; }
         var media = entities.media;
-        return globals.SHOW_MEDIA && media.length > 0 && media[0].type === 'photo';
+        return localSettings.getData().showMedia && media.length > 0 && media[0].type === 'photo';
       },
       mediaUrl: function() {
         return this.attributes.extended_entities.media[0].media_url_https + ':small';
@@ -81,5 +81,5 @@
   }
 
   app.factory('twitterModel', twitterModel);
-  twitterModel.$inject = ['globals', 'utils'];
+  twitterModel.$inject = ['localSettings', 'utils'];
 })();

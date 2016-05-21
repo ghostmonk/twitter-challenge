@@ -18,17 +18,51 @@ input[type=text] {
   background-color: white;
   background-position: 10px 10px;
   background-repeat: no-repeat;
-  padding: 12px 20px 12px 40px;
+  padding: 10px;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
 }
 
+input[type='checkbox'] {
+  -webkit-appearance:none;
+  width:50px;
+  height:50px;
+  background:white;
+  border:2px solid #555;
+}
+
+input[type='checkbox']:checked {
+  background: #00aa00;
+}
+
+select, input[type=number] {
+  width: 200px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  height:40px;
+}
+
 .column-input {
   float: left;
-  padding: 20px;
+  padding: 10px;
   display: block;
 }
 
 #editor {
-  padding: 20px;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: -75px;
+  @media (max-width: @maxScreenWidth) {
+    margin-top: 0px;
+  }
+}
+
+.editSection {
+  clear: both;
 }
