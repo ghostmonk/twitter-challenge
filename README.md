@@ -61,3 +61,20 @@ The twitter proxy service is installed on Heroku at https://gm-twitter-proxy.her
 
 I use Bower for all of the client-side libraries. There is a postinstall target 
 defined in the package.json, so bower install should be run automatically on npm install.
+
+## Known Issues
+
+* The style switcher in the edit page does not currently work.
+Unfortunately I could not get the style switcher in quick enough. The problem has to do with my deployment model.
+Since I am using less and gulp to compile out static style sheets, I would need to alter the pipe line to allow for
+compilation on multiple sheets. This was a little too costly in time.
+
+* ng-animate does not work: I was hoping to have better transitions when switching between pages. 
+However, after hooking up ng-animate, I could not get it to function correctly.
+
+## Thanks for the Opportunity
+
+Whatever ever happens in the near future, I want to thank you for the opportunity. 
+I had a great time building this application.
+I look forward to receiving feedback.
+
