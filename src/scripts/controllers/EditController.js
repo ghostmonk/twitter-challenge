@@ -67,7 +67,7 @@
         localSettings.setShowMedia(globals.SHOW_MEDIA);
         $('#showMedia').prop('checked', globals.SHOW_MEDIA);
 
-        localSettings.setShowMedia(globals.DEBUG);
+        localSettings.setLogOutput(globals.DEBUG);
         $('#logOutput').prop('checked', globals.DEBUG);
       }
 
