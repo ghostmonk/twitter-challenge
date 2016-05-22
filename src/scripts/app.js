@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngSanitize', 'ngResource', 'ngCookies', 'ngRoute', 'ngAnimate']);
+var app = angular.module('app', ['ngSanitize', 'ngRoute']);
 
 (function () {
   'use strict';

@@ -5,15 +5,15 @@
 
     var editView = Backbone.View.extend({
       events: {
-        "change #column1": "column1Change",
-        "change #column2": "column2Change",
-        "change #column3": "column3Change",
-        "change #numberOfTweets": "tweetsChange",
-        "input #numberOfTweets": "tweetsChanging",
-        "change #styles": "styleChange",
-        "change #showMedia": "showMediaChange",
-        "change #logOutput": "logOutputChange",
-        "click #reset": "reset"
+        'change #column1': 'column1Change',
+        'change #column2': 'column2Change',
+        'change #column3': 'column3Change',
+        'change #numberOfTweets': 'tweetsChange',
+        'input #numberOfTweets': 'tweetsChanging',
+        'change #styles': 'styleChange',
+        'change #showMedia': 'showMediaChange',
+        'change #logOutput': 'logOutputChange',
+        'click #reset': 'reset'
       },
       column1Change : function(event) {
         utils.log(event);
@@ -37,10 +37,10 @@
       },
       showMediaChange : function(event) {
         utils.log(event);
-        localSettings.setShowMedia(this.$('#showMedia').is(":checked"));
+        localSettings.setShowMedia(this.$('#showMedia').is(':checked'));
       },
       logOutputChange : function() {
-        localSettings.setLogOutput(this.$('#logOutput').is(":checked"));
+        localSettings.setLogOutput(this.$('#logOutput').is(':checked'));
       },
       tweetsChanging : function(event) {
         utils.log(event);
@@ -62,7 +62,7 @@
         setSlider(globals.NUMBER_OF_TWEETS);
 
         localSettings.setStyle(globals.STYLE);
-        $("#styles").val(globals.STYLE);
+        $('#styles').val(globals.STYLE);
 
         localSettings.setShowMedia(globals.SHOW_MEDIA);
         $('#showMedia').prop('checked', globals.SHOW_MEDIA);
@@ -70,10 +70,15 @@
 
     });
 
-    var editor = new editView({el: $("#editor")});
+    var editorDom = $('#editor');
+    var editor = new editView({el: editorDom});
 
     update();
     setSlider(localSettings.getData().numberOfTweets);
+
+    $('#loading').remove();
+    editorDom.fadeTo('slow', 1);
+
     function setSlider(value) {
       $('#outputNumberOfTweets').text(value);
     }

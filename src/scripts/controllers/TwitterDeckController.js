@@ -45,6 +45,8 @@
       loaded++;
       if(loaded == 3) {
         $scope.data = {timeLines:timeLines};
+        $('#loading').remove();
+        $("#twitter-deck").delay(500).fadeTo('slow', 1);
       }
     }
   }
