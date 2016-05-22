@@ -66,6 +66,9 @@
 
         localSettings.setShowMedia(globals.SHOW_MEDIA);
         $('#showMedia').prop('checked', globals.SHOW_MEDIA);
+
+        localSettings.setShowMedia(globals.DEBUG);
+        $('#logOutput').prop('checked', globals.DEBUG);
       }
 
     });

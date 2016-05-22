@@ -36,14 +36,28 @@
       </select>
     </div>
 
+
+
     <div class="column-input">
       <h3>Show Feed Images</h3>
-      <input type="checkbox" name="showMedia" value="showMedia" id="showMedia" ng-checked="data.showMedia" >
+
+      <div class="switch">
+        <input class="cmn-toggle cmn-toggle-round" id="showMedia" type="checkbox" ng-checked="data.showMedia">
+        <label for="showMedia"></label>
+      </div>
+
+      <!--<input type="checkbox" class="onoffswitch-checkbox" name="showMedia" value="showMedia" id="showMedia" ng-checked="data.showMedia" >-->
     </div>
 
     <div class="column-input">
       <h3>Log Output</h3>
-      <input type="checkbox" name="logOutput" value="logOutput" id="logOutput" ng-checked="data.logOutput" >
+
+      <div class="switch">
+        <input class="cmn-toggle cmn-toggle-round" id="logOutput" type="checkbox" ng-checked="data.logOutput">
+        <label for="logOutput"></label>
+      </div>
+
+      <!--<input type="checkbox" class="onoffswitch-checkbox" name="logOutput" value="logOutput" id="logOutput" ng-checked="data.logOutput" >-->
     </div>
   </div>
 
