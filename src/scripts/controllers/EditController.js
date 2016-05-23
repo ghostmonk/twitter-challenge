@@ -44,7 +44,7 @@
       },
       tweetsChanging : function(event) {
         utils.log(event);
-        setSlider($('#numberOfTweets').val());
+        setSliderValue($('#numberOfTweets').val());
       },
       reset : function(event) {
         utils.log(event);
@@ -59,7 +59,7 @@
 
         localSettings.setNumberOfTweets(globals.NUMBER_OF_TWEETS);
         this.$('#numberOfTweets').val(globals.NUMBER_OF_TWEETS);
-        setSlider(globals.NUMBER_OF_TWEETS);
+        setSliderValue(globals.NUMBER_OF_TWEETS);
 
         localSettings.setStyle(globals.STYLE);
         $('#styles').val(globals.STYLE);
@@ -77,12 +77,12 @@
     var editor = new editView({el: editorDom});
 
     update();
-    setSlider(localSettings.getData().numberOfTweets);
+    setSliderValue(localSettings.getData().numberOfTweets);
 
     $('#loading').remove();
     editorDom.fadeTo('slow', 1);
 
-    function setSlider(value) {
+    function setSliderValue(value) {
       $('#outputNumberOfTweets').text(value);
     }
 
