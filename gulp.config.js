@@ -34,6 +34,13 @@ module.exports = function () {
     html: src + htmlBlob,
     less: cssFolder + 'main.less',
     css: cssFolder + 'main.css',
+    extraSheets: [
+      cssFolder + 'office-space.less',
+      cssFolder + 'hipster.less',
+      cssFolder + 'pastels.less',
+      cssFolder + 'computer-geek.less'
+    ],
+    styleSheets:cssFolder + '**/*.css',
     assets: src + 'assets/**/*.*',
     fonts: fontsFolder + '**/*.*',
 

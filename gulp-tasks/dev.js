@@ -33,8 +33,16 @@ module.exports = function (gulp, $, utils, config) {
   }
 
   function styles() {
+    //Build whatever extra sheets added to project
+    config.extraSheets.forEach(function(sheetName) {
+      buildLessFile(sheetName);
+    });
+    return buildLessFile(config.less);
+  }
+
+  function buildLessFile(lessSheet) {
     return gulp
-      .src(config.less)
+      .src(lessSheet)
       .pipe($.plumber())
       .pipe($.less())
       .pipe($.autoprefixer({browser: ['last 3 version', '> %3']}))
