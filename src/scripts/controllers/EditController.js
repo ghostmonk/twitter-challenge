@@ -33,7 +33,9 @@
       },
       styleChange : function(event) {
         utils.log(event);
-        localSettings.setStyle(this.$('#styles').val());
+        var styleChoice = this.$('#styles').val();
+        localSettings.setStyle(styleChoice);
+        $('#override-style').attr('href', 'styles/' + styleChoice + '.css');
       },
       showMediaChange : function(event) {
         utils.log(event);
@@ -63,6 +65,7 @@
 
         localSettings.setStyle(globals.STYLE);
         $('#styles').val(globals.STYLE);
+        $('#override-style').attr('href', 'styles/' + globals.STYLE + '.css');
 
         localSettings.setShowMedia(globals.SHOW_MEDIA);
         $('#showMedia').prop('checked', globals.SHOW_MEDIA);

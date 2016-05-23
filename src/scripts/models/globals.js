@@ -12,7 +12,7 @@
     COLUMN_1: 'AppDirect',
     COLUMN_2: 'LaughingSquid',
     COLUMN_3: 'TechCrunch',
-    STYLE:'hipster',
+    STYLE:'office-space',
     USER_TIMELINE:'1.1/statuses/user_timeline.json',
     USER_SHOW:'1.1/users/show.json',
     DEBUG:false,

@@ -21,32 +21,29 @@
   <!-- bower:css -->
   <!-- endbower -->
   <!-- endbuild -->
-
-  <!-- build:css styles/app.css-->
-  <!-- inject:css -->
-  <link rel="stylesheet" href="styles/main.css">
-  <!-- endinject -->
-  <!-- endbuild -->
+  <style>
+    body {opacity: 0;}
+  </style>
 
   <script type="application/javascript">
-    function appendOverrideStyle() {
-      if(localStorage.appData === undefined) {
-        return;
-      }
 
-      var appData = JSON.parse(localStorage.appData);
-      if(appData.style === undefined) {
-        return;
-      }
-
+    function appendOverrideStyle(styleChoice) {
       var head = document.head || document.getElementsByTagName('head')[0];
       var style = document.createElement('link');
       style.id = "override-style";
       style.rel = "stylesheet";
-      style.href = 'styles/' + appData.style + '.css';
+      style.href = 'styles/' + styleChoice + '.css';
       head.appendChild(style);
     }
-    appendOverrideStyle();
+
+    var styleChoice = 'office-space';
+    if(localStorage.appData !== undefined) {
+      var appData = JSON.parse(localStorage.appData);
+      if(appData.style !== undefined) {
+        styleChoice = appData.style;
+      }
+    }
+    appendOverrideStyle(styleChoice);
   </script>
 
 </head>
@@ -91,11 +88,11 @@
 <script src="scripts/app.js"></script>
 <script src="scripts/controllers/EditController.js"></script>
 <script src="scripts/controllers/TwitterDeckController.js"></script>
+<script src="scripts/services/twitterService.js"></script>
+<script src="scripts/services/utils.js"></script>
 <script src="scripts/models/globals.js"></script>
 <script src="scripts/models/localSettings.js"></script>
 <script src="scripts/models/twitterModel.js"></script>
-<script src="scripts/services/twitterService.js"></script>
-<script src="scripts/services/utils.js"></script>
 <!-- endinject -->
 
 <!-- endbuild -->
