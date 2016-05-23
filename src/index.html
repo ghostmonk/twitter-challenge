@@ -39,9 +39,12 @@
         return;
       }
 
-      var headHtml = document.getElementsByTagName('head')[0].innerHTML;
-      headHtml += '<link rel="stylesheet" id="override-style" href="styles/' + appData.style + '.css">';
-      document.getElementsByTagName('head')[0].innerHTML = headHtml;
+      var head = document.head || document.getElementsByTagName('head')[0];
+      var style = document.createElement('link');
+      style.id = "override-style";
+      style.rel = "stylesheet";
+      style.href = 'styles/' + appData.style + '.css';
+      head.appendChild(style);
     }
     appendOverrideStyle();
   </script>
@@ -88,11 +91,11 @@
 <script src="scripts/app.js"></script>
 <script src="scripts/controllers/EditController.js"></script>
 <script src="scripts/controllers/TwitterDeckController.js"></script>
-<script src="scripts/services/twitterService.js"></script>
-<script src="scripts/services/utils.js"></script>
 <script src="scripts/models/globals.js"></script>
 <script src="scripts/models/localSettings.js"></script>
 <script src="scripts/models/twitterModel.js"></script>
+<script src="scripts/services/twitterService.js"></script>
+<script src="scripts/services/utils.js"></script>
 <!-- endinject -->
 
 <!-- endbuild -->
